@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "denque": "^1.2.2",
+    "msgpack5": "^4.0.1",
     "rxjs": "^5.4.3"
   },
   "devDependencies": {
