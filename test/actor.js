@@ -52,12 +52,10 @@ describe('ActorReference', function () {
   beforeEach(() => { system = start(); });
   afterEach(() => stop(system));
 
-  it('should have name, path, parent, properties', function () {
+  it('should have name, path and system properties', function () {
     let child = spawnStateless(system, ignore);
-    let grandchild = spawnStateless(child, ignore);
-    child.parent.should.equal(system);
-    grandchild.parent.should.equal(child);
     child.name.should.be.a('string');
+    child.system.should.deep.equal({ name: system.name });
     child.path.should.be.instanceOf(ActorPath);
   });
 });
